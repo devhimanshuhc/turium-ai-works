@@ -1,0 +1,86 @@
+[
+	{
+		"id": "falcon-freeze",
+		"question": "When are production deploys for Falcon frozen?",
+		"reference": "On Fridays after 14:00 IST and during the last three business days of each month, because invoice generation runs then.",
+		"sources": ["falcon-onboarding.md"]
+	},
+	{
+		"id": "falcon-escalation",
+		"question": "Who do I escalate a Falcon SEV-1 to, and within how long?",
+		"reference": "To the engineering manager, Priya Raman, within 15 minutes.",
+		"sources": ["falcon-onboarding.md"]
+	},
+	{
+		"id": "falcon-env-var",
+		"question": "Which environment variable do Falcon integration tests need?",
+		"reference": "STRIPE_TEST_KEY, which holds the Stripe test key.",
+		"sources": ["falcon-onboarding.md"]
+	},
+	{
+		"id": "falcon-replaced",
+		"question": "What system did Falcon replace and when?",
+		"reference": "The legacy Ruby invoicing monolith, in March 2025.",
+		"sources": ["falcon-onboarding.md"]
+	},
+	{
+		"id": "leave-carryover",
+		"question": "How many unused annual leave days can I carry over?",
+		"reference": "Up to 10 days; anything above 10 lapses on 31 December.",
+		"sources": ["leave-policy.md"]
+	},
+	{
+		"id": "leave-sick-certificate",
+		"question": "When do I need a doctor's certificate for sick leave?",
+		"reference": "For sick leave longer than 3 consecutive days.",
+		"sources": ["leave-policy.md"]
+	},
+	{
+		"id": "leave-parental",
+		"question": "How long is parental leave for a secondary caregiver?",
+		"reference": "4 weeks.",
+		"sources": ["leave-policy.md"]
+	},
+	{
+		"id": "incident-root-cause",
+		"question": "What caused the checkout outage in September 2025?",
+		"reference": "A configuration change cut the payments-gateway connection pool from 200 to 20; under morning traffic it was exhausted, requests timed out after 30 seconds and the load balancer returned 502s.",
+		"sources": ["incident-2025-09-checkout.md"]
+	},
+	{
+		"id": "incident-owner",
+		"question": "Who owns the action item about blocking large pool-size changes?",
+		"reference": "Arjun Mehta.",
+		"sources": ["incident-2025-09-checkout.md"]
+	},
+	{
+		"id": "cross-doc-sev1",
+		"question": "The checkout outage was a SEV-1. If Falcon had a SEV-1, who would it be escalated to?",
+		"reference": "Priya Raman, the engineering manager, within 15 minutes.",
+		"sources": ["falcon-onboarding.md", "incident-2025-09-checkout.md"]
+	},
+	{
+		"id": "faq-file-types",
+		"question": "Which file types can I upload, and what is the size limit?",
+		"reference": "PDF, DOCX, TXT and Markdown, up to 10 MB each.",
+		"sources": ["inbox-product-faq.md"]
+	},
+	{
+		"id": "unanswerable-ceo",
+		"question": "Who is the CEO of the company?",
+		"reference": null,
+		"sources": []
+	},
+	{
+		"id": "unanswerable-falcon-db",
+		"question": "What version of Postgres does Falcon run in production?",
+		"reference": null,
+		"sources": []
+	},
+	{
+		"id": "unanswerable-general",
+		"question": "What is the boiling point of water at sea level?",
+		"reference": null,
+		"sources": []
+	}
+]

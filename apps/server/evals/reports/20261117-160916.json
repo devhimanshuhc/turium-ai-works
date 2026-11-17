@@ -1,0 +1,301 @@
+{
+	"summary": {
+		"cases": 14,
+		"pass_rate": 1,
+		"retrieval_hit_rate": 1,
+		"retrieval_recall": 1.0,
+		"retrieval_mrr": 1.0,
+		"answer_correct_rate": 1,
+		"answer_correctness_mean": 5,
+		"faithfulness": 1.0,
+		"refusal_accuracy": 1,
+		"false_refusal_rate": 0,
+		"latency_p50_ms": 5198.0,
+		"latency_max_ms": 7051
+	},
+	"cases": [
+		{
+			"case_id": "falcon-freeze",
+			"question": "When are production deploys for Falcon frozen?",
+			"answerable": true,
+			"answer": "Production deploys for Falcon are frozen at the following times:\n\n* On Fridays after 14:00 IST [1].\n* During the last three business days of each month, because invoice generation runs during this period [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"falcon-onboarding.md",
+				"inbox-product-faq.md",
+				"incident-2025-09-checkout.md",
+				"leave-policy.md"
+			],
+			"expected_titles": ["falcon-onboarding.md"],
+			"verdict": "grounded",
+			"latency_ms": 4446,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and complete, matching all details from the reference answer perfectly.",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "falcon-escalation",
+			"question": "Who do I escalate a Falcon SEV-1 to, and within how long?",
+			"answerable": true,
+			"answer": "You must escalate a Falcon SEV-1 incident to the engineering manager, Priya Raman, within 15 minutes [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"falcon-onboarding.md",
+				"incident-2025-09-checkout.md",
+				"leave-policy.md",
+				"inbox-product-faq.md"
+			],
+			"expected_titles": ["falcon-onboarding.md"],
+			"verdict": "grounded",
+			"latency_ms": 5238,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and matches the reference perfectly, identifying both the correct person (Priya Raman) and the correct timeframe (within 15 minutes).",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "falcon-env-var",
+			"question": "Which environment variable do Falcon integration tests need?",
+			"answerable": true,
+			"answer": "Falcon integration tests require the Stripe test key to be set in the `STRIPE_TEST_KEY` environment variable [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"falcon-onboarding.md",
+				"incident-2025-09-checkout.md",
+				"inbox-product-faq.md",
+				"leave-policy.md"
+			],
+			"expected_titles": ["falcon-onboarding.md"],
+			"verdict": "grounded",
+			"latency_ms": 6223,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and matches the reference perfectly, identifying the STRIPE_TEST_KEY environment variable and its purpose.",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "falcon-replaced",
+			"question": "What system did Falcon replace and when?",
+			"answerable": true,
+			"answer": "Falcon replaced the legacy Ruby invoicing monolith in March 2025 [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"falcon-onboarding.md",
+				"incident-2025-09-checkout.md",
+				"inbox-product-faq.md",
+				"leave-policy.md"
+			],
+			"expected_titles": ["falcon-onboarding.md"],
+			"verdict": "grounded",
+			"latency_ms": 5306,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and matches the reference perfectly, identifying both the system replaced (the legacy Ruby invoicing monolith) and the timeframe (March 2025).",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "leave-carryover",
+			"question": "How many unused annual leave days can I carry over?",
+			"answerable": true,
+			"answer": "You can carry over up to 10 unused annual leave days to the next year [1]. Any unused annual leave days above this limit will lapse on 31 December [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"leave-policy.md",
+				"falcon-onboarding.md",
+				"inbox-product-faq.md",
+				"incident-2025-09-checkout.md"
+			],
+			"expected_titles": ["leave-policy.md"],
+			"verdict": "grounded",
+			"latency_ms": 5915,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and complete, matching all facts in the reference perfectly.",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "leave-sick-certificate",
+			"question": "When do I need a doctor's certificate for sick leave?",
+			"answerable": true,
+			"answer": "You need a doctor's certificate for sick leave that is longer than 3 consecutive days [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"leave-policy.md",
+				"falcon-onboarding.md",
+				"inbox-product-faq.md",
+				"incident-2025-09-checkout.md"
+			],
+			"expected_titles": ["leave-policy.md"],
+			"verdict": "grounded",
+			"latency_ms": 3804,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and matches the reference answer perfectly, stating that a doctor's certificate is required for sick leave longer than 3 consecutive days.",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "leave-parental",
+			"question": "How long is parental leave for a secondary caregiver?",
+			"answerable": true,
+			"answer": "Parental leave for a secondary caregiver is 4 weeks [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"leave-policy.md",
+				"falcon-onboarding.md",
+				"incident-2025-09-checkout.md",
+				"inbox-product-faq.md"
+			],
+			"expected_titles": ["leave-policy.md"],
+			"verdict": "grounded",
+			"latency_ms": 6048,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and matches the reference answer exactly.",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "incident-root-cause",
+			"question": "What caused the checkout outage in September 2025?",
+			"answerable": true,
+			"answer": "The checkout outage on 14 September 2025 was caused by a configuration change that reduced the connection pool size of the `payments-gateway` service from 200 to 20 [1]. \n\nUnder morning traffic, this pool was exhausted, causing requests to queue past the 30-second timeout and resulting in the load balancer returning HTTP 502 errors [1]. The configuration change had been reviewed but was not load tested [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"incident-2025-09-checkout.md",
+				"falcon-onboarding.md",
+				"inbox-product-faq.md",
+				"leave-policy.md"
+			],
+			"expected_titles": ["incident-2025-09-checkout.md"],
+			"verdict": "grounded",
+			"latency_ms": 5158,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and matches every fact in the reference, including the configuration change details, the connection pool reduction from 200 to 20, the morning traffic exhaustion, the 30-second timeout, and the 502 errors from the load balancer. It also includes some harmless extra details.",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "incident-owner",
+			"question": "Who owns the action item about blocking large pool-size changes?",
+			"answerable": true,
+			"answer": "Arjun Mehta owns the action item to add a CI check that blocks pool-size changes greater than 50% without a load test [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"incident-2025-09-checkout.md",
+				"falcon-onboarding.md",
+				"inbox-product-faq.md",
+				"leave-policy.md"
+			],
+			"expected_titles": ["incident-2025-09-checkout.md"],
+			"verdict": "grounded",
+			"latency_ms": 7051,
+			"correctness": 5,
+			"correctness_reasoning": "The answer correctly identifies Arjun Mehta as the owner of the action item, matching the reference answer perfectly and adding helpful, accurate context.",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "cross-doc-sev1",
+			"question": "The checkout outage was a SEV-1. If Falcon had a SEV-1, who would it be escalated to?",
+			"answerable": true,
+			"answer": "If Falcon has a SEV-1 incident, it must be escalated to the engineering manager, Priya Raman, within 15 minutes [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"falcon-onboarding.md",
+				"incident-2025-09-checkout.md",
+				"inbox-product-faq.md",
+				"leave-policy.md"
+			],
+			"expected_titles": [
+				"falcon-onboarding.md",
+				"incident-2025-09-checkout.md"
+			],
+			"verdict": "grounded",
+			"latency_ms": 5686,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and matches the reference answer perfectly, including the name of the engineering manager (Priya Raman) and the escalation timeframe (within 15 minutes).",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "faq-file-types",
+			"question": "Which file types can I upload, and what is the size limit?",
+			"answerable": true,
+			"answer": "You can upload the following file types:\n* PDF [1]\n* DOCX [1]\n* TXT [1]\n* Markdown [1]\n\nEach file can be up to 10 MB in size [1].",
+			"refused": false,
+			"retrieved_titles": [
+				"inbox-product-faq.md",
+				"incident-2025-09-checkout.md",
+				"leave-policy.md",
+				"falcon-onboarding.md"
+			],
+			"expected_titles": ["inbox-product-faq.md"],
+			"verdict": "grounded",
+			"latency_ms": 4204,
+			"correctness": 5,
+			"correctness_reasoning": "The answer is fully correct and complete, listing all the allowed file types and the correct size limit as specified in the reference.",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "unanswerable-ceo",
+			"question": "Who is the CEO of the company?",
+			"answerable": false,
+			"answer": "I couldn't find that in the selected knowledge bases.",
+			"refused": true,
+			"retrieved_titles": [
+				"falcon-onboarding.md",
+				"incident-2025-09-checkout.md",
+				"leave-policy.md",
+				"inbox-product-faq.md"
+			],
+			"expected_titles": [],
+			"verdict": "no_answer",
+			"latency_ms": 5025,
+			"correctness": null,
+			"correctness_reasoning": "",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "unanswerable-falcon-db",
+			"question": "What version of Postgres does Falcon run in production?",
+			"answerable": false,
+			"answer": "I couldn't find that in the selected knowledge bases.",
+			"refused": true,
+			"retrieved_titles": [
+				"falcon-onboarding.md",
+				"inbox-product-faq.md",
+				"incident-2025-09-checkout.md",
+				"leave-policy.md"
+			],
+			"expected_titles": [],
+			"verdict": "no_answer",
+			"latency_ms": 3537,
+			"correctness": null,
+			"correctness_reasoning": "",
+			"error": null,
+			"notes": []
+		},
+		{
+			"case_id": "unanswerable-general",
+			"question": "What is the boiling point of water at sea level?",
+			"answerable": false,
+			"answer": "I couldn't find that in the selected knowledge bases.",
+			"refused": true,
+			"retrieved_titles": [
+				"inbox-product-faq.md",
+				"falcon-onboarding.md",
+				"incident-2025-09-checkout.md",
+				"leave-policy.md"
+			],
+			"expected_titles": [],
+			"verdict": "no_answer",
+			"latency_ms": 3919,
+			"correctness": null,
+			"correctness_reasoning": "",
+			"error": null,
+			"notes": []
+		}
+	]
+}

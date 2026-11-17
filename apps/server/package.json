@@ -1,0 +1,16 @@
+{
+	"name": "server",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "uv run uvicorn app.main:app --reload --host 127.0.0.1 --port 8000",
+		"start": "uv run gunicorn -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000",
+		"typecheck": "uv run mypy app config.py",
+		"lint:fix": "uv run ruff format . && uv run ruff check --fix .",
+		"test": "uv run pytest",
+		"test:cov": "uv run pytest --cov=app --cov-report=term-missing",
+		"db:migrate": "uv run alembic upgrade head",
+		"db:revision": "uv run alembic revision --autogenerate -m",
+		"eval": "uv run python -m evals.run"
+	}
+}

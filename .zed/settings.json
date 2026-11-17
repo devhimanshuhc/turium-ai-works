@@ -1,0 +1,34 @@
+{
+	"format_on_save": "on",
+	"lsp": {
+		"typescript-language-server": {
+			"settings": {
+				"typescript": {
+					"preferences": {
+						"includePackageJsonAutoImports": "on"
+					}
+				}
+			}
+		}
+	},
+	"code_actions_on_format": {
+		"source.fixAll.biome": true,
+		"source.organizeImports.biome": true
+	},
+	"formatter": {
+		"language_server": {
+			"name": "biome"
+		}
+	},
+	"languages": {
+		"Python": {
+			"language_servers": ["ruff", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "ruff"
+				}
+			},
+			"format_on_save": "on"
+		}
+	}
+}

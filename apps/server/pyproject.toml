@@ -1,0 +1,45 @@
+[project]
+name = "knowledge-inbox-server"
+version = "0.1.0"
+description = "FastAPI backend for the Turium AI Knowledge Inbox assignment"
+authors = [{ name = "Himanshu Chauhan", email = "chimanshu458@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "alembic>=1.20.1",
+    "asyncpg>=0.32.0",
+    "fastapi (>=0.115.12,<0.116.0)",
+    "google-genai>=3.4.0",
+    "gunicorn>=23.0.0",
+    "httpx>=0.28.1",
+    "openai>=3.52.0",
+    "pgvector>=0.5.1",
+    "pydantic-settings>=2.12.0",
+    "pypdf>=7.1.0",
+    "python-docx>=1.2.0",
+    "python-multipart>=0.0.34",
+    "sqlalchemy[asyncio]>=2.0",
+    "trafilatura>=2.3.1",
+    "uvicorn[standard] (>=0.34.2,<0.35.0)",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.27.0",
+    "mypy>=1.8.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=1.3.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.3.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "C4", "UP", "N", "RUF"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "config"]
